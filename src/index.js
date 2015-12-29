@@ -12,7 +12,7 @@ define((require, exports, module) => {
                 bgColor: '#666',
                 textColor: '#CCC',
                 circleColor: '#CCC',
-                duration: '2s'
+                duration: '1.5s'
             };
             data = util.mix(data || {}, DEFAULT_CONFIG, false);
             this.$container = $(data.container);
@@ -32,10 +32,8 @@ define((require, exports, module) => {
                 boxHeight = 150;
             this.$loading = $('<div class="loading-wrap">' 
                             +     '<div class="loading-box">' 
-                            +         '<div class="loading-circle">' 
-                            +         '<div class="loading-center"></div>' 
-                            +         '</div>' 
-                            +     '<div class="loading-text">' + this.text + '</div>' 
+                            +         '<div class="loading-circle"></div>' 
+                            +         '<div class="loading-text">' + this.text + '</div>' 
                             +     '</div>' 
                             + '</div>');
 

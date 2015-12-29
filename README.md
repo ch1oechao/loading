@@ -7,8 +7,8 @@
         text: 'Loading...',    // loading 加载文字
         textColor: '#FFF',     // loading 文字颜色
         circleColor: '#FFF',   // loading 进度条颜色
-        bgColor: 'pink',       // loading 背景颜色
-        duration: '1s'         // loading 加载速度
+        bgColor: '#666',       // loading 背景颜色
+        duration: '1.5s'         // loading 加载速度
     });
 
 ### API
