@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-Has">
+
+<head>
+    <meta charset="UTF-8">
+    <title>loading</title>
+    <script src="//g.alicdn.com/kissy/k/5.0.1/seed.js"></script>
+</head>
+<style>
+.test-wrap {
+    position: relative;
+    margin: 100px auto;
+    width: 300px;
+    height: 550px;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px 3px #CCC;
+}
+</style>
+
+<body>
+    <div class="test-wrap"></div>
+    <script>
+    require.config({
+        packages: [{
+            name: 'app',
+            path: './'
+        }]
+    });
+    require(['app/', 'node'], function(Loading, $) {
+        var $container = $('.test-wrap');
+        var loading = new Loading({
+            container: $container,
+            text: 'Loading...',
+            textColor: '#FFF',
+            circleColor: '#FFF',
+            bgColor: 'pink',
+            duration: '1s'
+        });
+        loading.show();
+    });
+    </script>
+</body>
+
+</html>
