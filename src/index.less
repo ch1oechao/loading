@@ -4,7 +4,7 @@
     align-items: center;
     justify-content: center;
     visibility: hidden;
-    color: #666;
+    color: #CCC;
 }
 
 .show {
@@ -25,15 +25,13 @@
     margin: 35px auto 30px;
     width: 40px;
     height: 40px;
-    background-color: #CCC;
+    background-color: #666;
     color: inherit;
     background-image: linear-gradient(to right, transparent 50%, currentColor 0);
     border-radius: 50%;
     overflow: hidden;
-    outline: none;
-    border: none;
-    animation: spin 2s linear infinite;
-    transform-origin: center center;
+    transform: rotate(180deg);
+    animation: circle 1.5s linear infinite;
     &::before {
         content: '';
         display: block;
@@ -42,7 +40,8 @@
         border-radius: 0 100% 100% 0 / 50%;
         background-color: inherit;
         transform-origin: left;
-        transform: rotate(72deg);
+        animation: spin 1s linear infinite, 
+                   bg 2s step-start infinite;
     }
 }
 
@@ -63,11 +62,24 @@
     color: #CCC;
 }
 
-@keyframes spin {
+@keyframes circle {
     0% {
-        transform: rotate(0);
+        transform: rotate(180deg)
     }
     100% {
-        transform: rotate(360deg);
+        transform: rotate(540deg)
+    }
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(-180deg);
+    }
+}
+
+@keyframes bg {
+    50% {
+        color: inherit;
+        background-color: currentColor;
     }
 }
