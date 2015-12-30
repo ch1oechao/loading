@@ -7,18 +7,51 @@
     <script src="//g.alicdn.com/kissy/k/5.0.1/seed.js"></script>
 </head>
 <style>
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
 .test-wrap {
     position: relative;
-    margin: 80px auto;
+    margin: 50px;
     width: 300px;
     height: 500px;
     border-radius: 3px;
     box-shadow: 0 1px 2px 2px #CCC;
 }
+.test-wrap p {
+    margin: 50px auto 0;
+    text-align: center;
+}
+.loading-svg-wrap {
+    margin: 110px 75px;
+    color: #666;
+}
+.loading-svg-box {
+    margin: 30px auto;
+}
 </style>
 
 <body>
-    <div class="test-wrap"></div>
+    <div class="container">
+        <div class="test-wrap">
+            <p>CSS3 transform (use loading)</p>
+        </div>
+        <div class="test-wrap">
+            <p>SVG (test)</p>
+            <div class="loading-svg-wrap show">
+                <div class="loading-box">
+                    <div class="loading-svg-circle show">
+                        <svg width="40" height="40" viewBox="0 0 8 8">
+                            <circle r="4" cx="4" cy="4" stroke-dasharray="0 25" />
+                        </svg>
+                    </div>
+                    <div class="loading-text">加载中...</div>
+                </div>
+            </div>
+        </div>
+    </div>
     <script>
     require.config({
         packages: [{
@@ -27,13 +60,13 @@
         }]
     });
     require(['app/', 'node'], function(Loading, $) {
-        var $container = $('.test-wrap');
+        var $container = $('.test-wrap')[0];
         var loading = new Loading({
             container: $container,
             text: '加载中...',
-            textColor: '#FFF',
-            circleColor: '#FFF',
-            bgColor: '#999',
+            textColor: '#CCC',
+            circleColor: '#CCC',
+            bgColor: '#666',
             duration: '2s'
         });
         loading.show();

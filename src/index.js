@@ -38,7 +38,7 @@ define((require, exports, module) => {
                             + '</div>');
 
             this.$container.append(this.$loading);
-            this.$loading.css({
+            $(this.$loading, this.$container).css({
                 'top': (wrapHeight - boxHeight) / 2 + 'px',
                 'left': (wrapWidth - boxWidth) / 2 + 'px',
                 'color': this.bgColor

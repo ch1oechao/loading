@@ -43,7 +43,7 @@ define(function (require, exports, module) {
                 this.$loading = $('<div class="loading-wrap">' + '<div class="loading-box">' + '<div class="loading-circle"></div>' + '<div class="loading-text">' + this.text + '</div>' + '</div>' + '</div>');
 
                 this.$container.append(this.$loading);
-                this.$loading.css({
+                $(this.$loading, this.$container).css({
                     'top': (wrapHeight - boxHeight) / 2 + 'px',
                     'left': (wrapWidth - boxWidth) / 2 + 'px',
                     'color': this.bgColor
